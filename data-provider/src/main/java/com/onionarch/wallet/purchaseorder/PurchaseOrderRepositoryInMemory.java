@@ -5,9 +5,9 @@ import java.util.List;
 
 public class PurchaseOrderRepositoryInMemory implements PurchaseOrderRepository {
     private final List<PurchaseOrderEntity> memoryDB = new ArrayList<>();
-    private final PurchaseOrderDomainToEntityConverter converter;
+    private final PurchaseOrderConverter converter;
 
-    public PurchaseOrderRepositoryInMemory(PurchaseOrderDomainToEntityConverter converter) {
+    public PurchaseOrderRepositoryInMemory(PurchaseOrderConverter converter) {
         this.converter = converter;
     }
 

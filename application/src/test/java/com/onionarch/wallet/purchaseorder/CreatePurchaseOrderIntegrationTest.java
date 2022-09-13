@@ -25,7 +25,7 @@ class CreatePurchaseOrderIntegrationTest {
 
     @BeforeEach
     void setUp() {
-        var converter = new PurchaseOrderDomainToEntityConverter();
+        var converter = new PurchaseOrderConverter();
         purchaseOrderRepository = new PurchaseOrderRepositoryInMemory(converter);
         createPurchaseOrder = new CreatePurchaseOrder(purchaseOrderRepository, coinIntegration);
     }

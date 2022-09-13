@@ -1,6 +1,6 @@
 package com.onionarch.wallet.purchaseorder;
 
-public class PurchaseOrderDomainToEntityConverter {
+public class PurchaseOrderConverter {
 
     public PurchaseOrderEntity convert(PurchaseOrder purchaseOrder){
         return new PurchaseOrderEntity(
