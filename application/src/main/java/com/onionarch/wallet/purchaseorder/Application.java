@@ -1,13 +1,13 @@
-package com.onionarch;
+package com.onionarch.wallet.purchaseorder;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class DataProviderApplication {
+public class Application {
 
 	public static void main(String[] args) {
-		SpringApplication.run(DataProviderApplication.class, args);
+		SpringApplication.run(Application.class, args);
 	}
 
 }

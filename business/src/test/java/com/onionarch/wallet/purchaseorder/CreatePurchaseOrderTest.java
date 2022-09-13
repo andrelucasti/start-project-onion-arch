@@ -1,4 +1,4 @@
-package com.onionarch.wallet;
+package com.onionarch.wallet.purchaseorder;
 
 import com.onionarch.wallet.coin.Coin;
 import com.onionarch.wallet.purchaseorder.CoinIntegration;
