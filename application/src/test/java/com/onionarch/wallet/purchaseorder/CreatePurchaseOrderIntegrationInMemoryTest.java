@@ -14,22 +14,17 @@ import static org.mockito.Mockito.eq;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
-class CreatePurchaseOrderIntegrationTest {
-
+class CreatePurchaseOrderIntegrationInMemoryTest {
     private CreatePurchaseOrder createPurchaseOrder;
     private PurchaseOrderRepository purchaseOrderRepository;
-
     @Mock
     private CoinIntegration coinIntegration;
-
-
     @BeforeEach
     void setUp() {
         var converter = new PurchaseOrderConverter();
-        purchaseOrderRepository = new PurchaseOrderRepositoryInMemory(converter);
+        purchaseOrderRepository = new PurchaseOrderRepositoryImpl(new PurchaseOrderRepositoryInMemory(),converter);
         createPurchaseOrder = new CreatePurchaseOrder(purchaseOrderRepository, coinIntegration);
     }
-
     @Test
     void shouldSaveAndReturnAPurchaseOrder() {
         var walletId = UUID.randomUUID();
