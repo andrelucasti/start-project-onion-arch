@@ -6,7 +6,8 @@ public class PurchaseOrderRepositoryImpl implements PurchaseOrderRepository{
     private final PurchaseOrderRepositoryEntity purchaseOrderRepositoryEntity;
     private final PurchaseOrderConverter purchaseOrderConverter;
 
-    public PurchaseOrderRepositoryImpl(PurchaseOrderRepositoryEntity purchaseOrderRepositoryEntity, PurchaseOrderConverter purchaseOrderConverter) {
+    public PurchaseOrderRepositoryImpl(PurchaseOrderRepositoryEntity purchaseOrderRepositoryEntity,
+                                       PurchaseOrderConverter purchaseOrderConverter) {
         this.purchaseOrderRepositoryEntity = purchaseOrderRepositoryEntity;
         this.purchaseOrderConverter = purchaseOrderConverter;
     }

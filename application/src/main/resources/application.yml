@@ -1,0 +1,11 @@
+spring:
+  config:
+    name: onion-arch
+  main:
+    banner-mode: console
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/wallet-trade
+    username: start-project
+    password: start-project
+

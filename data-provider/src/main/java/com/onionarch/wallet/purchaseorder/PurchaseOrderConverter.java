@@ -13,10 +13,10 @@ public class PurchaseOrderConverter {
 
     public PurchaseOrder convert(PurchaseOrderEntity purchaseOrderEntity) {
         return new PurchaseOrder(
-                purchaseOrderEntity.coin(),
-                purchaseOrderEntity.quantity(),
-                purchaseOrderEntity.walletId(),
-                purchaseOrderEntity.purchaseValue(),
-                purchaseOrderEntity.purchaseDate());
+                purchaseOrderEntity.getCoin(),
+                purchaseOrderEntity.getQuantity(),
+                purchaseOrderEntity.getWalletId(),
+                purchaseOrderEntity.getPurchaseValue(),
+                purchaseOrderEntity.getPurchaseDate());
     }
 }
