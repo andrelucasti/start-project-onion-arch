@@ -1,0 +1,57 @@
+{
+  "status": {
+    "timestamp": "2022-09-14T22:14:48.048Z",
+    "error_code": 0,
+    "error_message": null,
+    "elapsed": 1,
+    "credit_count": 1,
+    "notice": null
+  },
+  "data": {
+    "BTC": {
+      "id": 6486,
+      "name": "0hsta6hh7sad",
+      "symbol": "BTC",
+      "slug": "dbhex0yt287",
+      "is_active": 9272,
+      "is_fiat": null,
+      "circulating_supply": 4073,
+      "total_supply": 369,
+      "max_supply": 6564,
+      "date_added": "2022-09-14T22:14:48.048Z",
+      "num_market_pairs": 4439,
+      "cmc_rank": 3711,
+      "last_updated": "2022-09-14T22:14:48.048Z",
+      "tags": [
+        "r2likzqwjrk",
+        "btibjckg8fp",
+        "jgtw8x8yn7s",
+        "k7yf4yrm67i",
+        "mihtgb1jhvc",
+        "ys910pj8zpk",
+        "hvk7xzbobvd",
+        "qz50l2mh1sh",
+        "o2sahmw159",
+        "8pgbeylajio"
+      ],
+      "platform": null,
+      "self_reported_circulating_supply": null,
+      "self_reported_market_cap": null,
+      "quote": {
+        "USD": {
+          "price": 0.175378290108672,
+          "volume_24h": 0.9824566741253056,
+          "volume_change_24h": 0.7542947635498436,
+          "percent_change_1h": 0.1371399282956438,
+          "percent_change_24h": 0.8723955440069446,
+          "percent_change_7d": 0.1199333532663871,
+          "percent_change_30d": 0.326124497969704,
+          "market_cap": 0.618610957438205,
+          "market_cap_dominance": 498,
+          "fully_diluted_market_cap": 0.8649320972863406,
+          "last_updated": "2022-09-14T22:14:48.048Z"
+        }
+      }
+    }
+  }
+}

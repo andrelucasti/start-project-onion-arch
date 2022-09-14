@@ -1,6 +1,7 @@
 package com.onionarch.wallet.purchaseorder;
 
 import com.onionarch.wallet.coin.Coin;
+import com.onionarch.wallet.coin.CoinIntegration;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
