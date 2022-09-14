@@ -2,10 +2,20 @@ spring:
   config:
     name: onion-arch
   main:
-    banner-mode: console
+    banner-mode: off
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:5432/wallet-trade
+    url: jdbc:postgresql://localhost:5432/start-project
     username: start-project
     password: start-project
+  jpa:
+    open-in-view: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQL95Dialect
+  flyway:
+    locations: "classpath:migration"
+    validate-on-migrate: true
+
+
 
