@@ -1,5 +1,8 @@
 package com.onionarch.wallet.purchaseorder;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class PurchaseOrderConverter {
 
     public PurchaseOrderEntity convert(PurchaseOrder purchaseOrder){

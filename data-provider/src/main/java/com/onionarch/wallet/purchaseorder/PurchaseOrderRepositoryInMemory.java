@@ -12,8 +12,10 @@ public class PurchaseOrderRepositoryInMemory implements PurchaseOrderRepositoryE
     private final List<PurchaseOrderEntity> memoryDB = new ArrayList<>();
 
     @Override
-    public void save(PurchaseOrderEntity purchaseOrderEntity) {
+    public PurchaseOrderEntity save(PurchaseOrderEntity purchaseOrderEntity) {
         memoryDB.add(purchaseOrderEntity);
+
+        return purchaseOrderEntity;
     }
 
     @Override

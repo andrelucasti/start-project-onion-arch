@@ -32,7 +32,7 @@ class CreatePurchaseOrderIntegrationSQLDatabaseTest {
         var purchaseOrderRepositoryEntity = new PurchaseOrderRepositorySpringData(purchaseOrderEntityJPA);
 
         purchaseOrderRepository = new PurchaseOrderRepositoryImpl(purchaseOrderRepositoryEntity, converter);
-        createPurchaseOrder = new CreatePurchaseOrder(purchaseOrderRepository, coinIntegration);
+        createPurchaseOrder = CreatePurchaseOrder.getInstance(purchaseOrderRepository, coinIntegration);
     }
     @Test
     void shouldSaveAndReturnAPurchaseOrder() {

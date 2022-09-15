@@ -24,7 +24,7 @@ class CreatePurchaseOrderIntegrationInMemoryTest {
     void setUp() {
         var converter = new PurchaseOrderConverter();
         purchaseOrderRepository = new PurchaseOrderRepositoryImpl(new PurchaseOrderRepositoryInMemory(),converter);
-        createPurchaseOrder = new CreatePurchaseOrder(purchaseOrderRepository, coinIntegration);
+        createPurchaseOrder = CreatePurchaseOrder.getInstance(purchaseOrderRepository, coinIntegration);
     }
     @Test
     void shouldSaveAndReturnAPurchaseOrder() {

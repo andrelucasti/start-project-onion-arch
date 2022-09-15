@@ -17,8 +17,8 @@ public class PurchaseOrderRepositorySpringData implements PurchaseOrderRepositor
 
     @Override
     @Transactional
-    public void save(PurchaseOrderEntity purchaseOrderEntity) {
-        purchaseOrderEntityJPA.save(purchaseOrderEntity);
+    public PurchaseOrderEntity save(PurchaseOrderEntity purchaseOrderEntity) {
+        return purchaseOrderEntityJPA.save(purchaseOrderEntity);
     }
 
     @Override

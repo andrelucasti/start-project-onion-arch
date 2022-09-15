@@ -1,21 +1,25 @@
 package com.onionarch.wallet.purchaseorder;
 
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Repository;
+
 import java.util.List;
 
+@Repository
 public class PurchaseOrderRepositoryImpl implements PurchaseOrderRepository{
     private final PurchaseOrderRepositoryEntity purchaseOrderRepositoryEntity;
     private final PurchaseOrderConverter purchaseOrderConverter;
 
-    public PurchaseOrderRepositoryImpl(PurchaseOrderRepositoryEntity purchaseOrderRepositoryEntity,
+    public PurchaseOrderRepositoryImpl(@Qualifier("purchaseOrderRepositoryInMemory") PurchaseOrderRepositoryEntity purchaseOrderRepositoryEntity,
                                        PurchaseOrderConverter purchaseOrderConverter) {
         this.purchaseOrderRepositoryEntity = purchaseOrderRepositoryEntity;
         this.purchaseOrderConverter = purchaseOrderConverter;
     }
 
     @Override
-    public void save(PurchaseOrder purchaseOrder) {
+    public PurchaseOrder save(PurchaseOrder purchaseOrder) {
         var purchaseOrderEntity = purchaseOrderConverter.convert(purchaseOrder);
-        purchaseOrderRepositoryEntity.save(purchaseOrderEntity);
+        return purchaseOrderConverter.convert(purchaseOrderRepositoryEntity.save(purchaseOrderEntity));
     }
 
     @Override

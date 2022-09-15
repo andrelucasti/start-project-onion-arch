@@ -31,7 +31,7 @@ class CreatePurchaseOrderTest {
 
     @BeforeEach
     void setUp() {
-        createPurchaseOrder = new CreatePurchaseOrder(purchaseOrderRepository, coinIntegration);
+        createPurchaseOrder = CreatePurchaseOrder.getInstance(purchaseOrderRepository, coinIntegration);
     }
 
     @Test

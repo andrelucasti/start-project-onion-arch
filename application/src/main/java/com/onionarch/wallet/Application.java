@@ -1,4 +1,4 @@
-package com.onionarch.wallet.purchaseorder;
+package com.onionarch.wallet;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
