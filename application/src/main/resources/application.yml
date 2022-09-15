@@ -1,3 +1,4 @@
+
 spring:
   config:
     name: onion-arch
@@ -19,3 +20,10 @@ spring:
 
 
 
+feign:
+  client:
+    coinMarketCap:
+      url: "https://pro-api.coinmarketcap.com/"
+      token: "a48168cc-c354-4b49-8a05-077b842815e7"
+server:
+  port: 9958

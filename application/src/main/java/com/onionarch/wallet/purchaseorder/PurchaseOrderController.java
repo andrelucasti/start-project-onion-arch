@@ -15,30 +15,26 @@ public class PurchaseOrderController {
 
     private final PurchaseOrderRepository purchaseOrderRepository;
     private final CoinIntegration coinIntegration;
+    private final PurchaseOrderControllerConverter purchaseOrderControllerConverter;
+
 
     public PurchaseOrderController(PurchaseOrderRepository purchaseOrderRepository,
-                                   CoinIntegration coinIntegration) {
+                                   CoinIntegration coinIntegration,
+                                   PurchaseOrderControllerConverter purchaseOrderControllerConverter) {
         this.purchaseOrderRepository = purchaseOrderRepository;
         this.coinIntegration = coinIntegration;
+        this.purchaseOrderControllerConverter = purchaseOrderControllerConverter;
     }
 
 
     @PostMapping
     public ResponseEntity<PurchaseOrderResponse> createPurchaseOrder(@RequestBody PurchaseOrderRequest purchaseOrderRequest){
-        var purchaseOrderReturn  = CreatePurchaseOrder.getInstance(purchaseOrderRepository, coinIntegration)
-                .execute(new PurchaseOrder(
-                        purchaseOrderRequest.coinSymbol(),
-                        purchaseOrderRequest.coinAmount(),
-                        purchaseOrderRequest.walletId())
-                );
+        var purchaseOrder = purchaseOrderControllerConverter.convert(purchaseOrderRequest);
+        var purchaseOrderReturn  = CreatePurchaseOrder
+                .getInstance(purchaseOrderRepository, coinIntegration)
+                .execute(purchaseOrder);
 
-
-        var response = new PurchaseOrderResponse(
-                purchaseOrderReturn.walletId(),
-                purchaseOrderReturn.coin(),
-                purchaseOrderReturn.quantity(),
-                purchaseOrderReturn.purchaseValue(),
-                purchaseOrderReturn.purchaseDate());
+        var response = purchaseOrderControllerConverter.convert(purchaseOrderReturn);
 
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
 

@@ -59,7 +59,7 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
-					<mainClass>com.onionarch.wallet.purchaseorder.Application</mainClass>
+					<mainClass>com.onionarch.wallet.Application</mainClass>
 				</configuration>
 			</plugin>
 		</plugins>

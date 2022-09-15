@@ -39,6 +39,10 @@ class CreatePurchaseOrderTest {
         var purchaseOrderArgumentCaptor = ArgumentCaptor.forClass(PurchaseOrder.class);
         var walletId = UUID.randomUUID();
         var purchaseOrder = new PurchaseOrder("BTC", 0.5D, walletId);
+
+
+        when(coinIntegration.fetchCoinBy(eq(purchaseOrder.coin()))).thenReturn(new Coin("BTC", 1100D));
+
         createPurchaseOrder.execute(purchaseOrder);
 
         verify(purchaseOrderRepository).save(purchaseOrderArgumentCaptor.capture());

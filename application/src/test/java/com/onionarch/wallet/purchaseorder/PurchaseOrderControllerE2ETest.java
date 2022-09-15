@@ -31,13 +31,14 @@ class PurchaseOrderControllerE2ETest {
     void shouldReturnPurchaseOrderResponseWhenPurchaseOrderIsCreated() throws IOException {
         String walletId = UUID.randomUUID().toString();
         String coinSymbol = "BNB";
-        String coinAmount = "2";
+        double coinAmount = 2.0D;
 
-        var purchaseOrderRequest = Resources.toString(Resources.getResource("contracts/purchaseorder/request-purchase-order.json"),
+        var purchaseOrderRequest = Resources.toString(Resources
+                                .getResource("contracts/purchaseorder/request-purchase-order.json"),
                 StandardCharsets.UTF_8)
                 .replace("{walletId}", walletId)
                 .replace("{coinSymbol}", coinSymbol)
-                .replace("{coinAmount}", coinAmount);
+                .replace("{coinAmount}", Double.toString(coinAmount));
 
         RestAssuredMockMvc.given()
                 .contentType(ContentType.JSON)
@@ -47,7 +48,6 @@ class PurchaseOrderControllerE2ETest {
                 .status(HttpStatus.CREATED)
                 .body("walletId", Matchers.equalTo(walletId))
                 .body("coinSymbol", Matchers.equalTo(coinSymbol))
-                .body("coinAmount", Matchers.equalTo(coinAmount))
                 .body("coinPrice", Matchers.not(Matchers.emptyOrNullString()))
                 .body("purchaseTotalValue", Matchers.not(Matchers.emptyOrNullString()))
                 .body("purchaseDate", Matchers.not(Matchers.emptyOrNullString()));
