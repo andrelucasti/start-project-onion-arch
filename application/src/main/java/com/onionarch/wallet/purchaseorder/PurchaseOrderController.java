@@ -17,7 +17,6 @@ public class PurchaseOrderController {
     private final CoinIntegration coinIntegration;
     private final PurchaseOrderControllerConverter purchaseOrderControllerConverter;
 
-
     public PurchaseOrderController(PurchaseOrderRepository purchaseOrderRepository,
                                    CoinIntegration coinIntegration,
                                    PurchaseOrderControllerConverter purchaseOrderControllerConverter) {
@@ -25,7 +24,6 @@ public class PurchaseOrderController {
         this.coinIntegration = coinIntegration;
         this.purchaseOrderControllerConverter = purchaseOrderControllerConverter;
     }
-
 
     @PostMapping
     public ResponseEntity<PurchaseOrderResponse> createPurchaseOrder(@RequestBody PurchaseOrderRequest purchaseOrderRequest){
@@ -37,6 +35,5 @@ public class PurchaseOrderController {
         var response = purchaseOrderControllerConverter.convert(purchaseOrderReturn);
 
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
-
     }
 }

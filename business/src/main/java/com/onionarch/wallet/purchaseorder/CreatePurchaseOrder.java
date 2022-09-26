@@ -8,7 +8,8 @@ public class CreatePurchaseOrder {
     private final PurchaseOrderRepository purchaseOrderRepository;
     private final CoinIntegration coinIntegration;
 
-    private CreatePurchaseOrder(PurchaseOrderRepository purchaseOrderRepository, CoinIntegration coinIntegration) {
+    private CreatePurchaseOrder(PurchaseOrderRepository purchaseOrderRepository,
+                                CoinIntegration coinIntegration) {
         this.purchaseOrderRepository = purchaseOrderRepository;
         this.coinIntegration = coinIntegration;
     }
@@ -22,7 +23,6 @@ public class CreatePurchaseOrder {
 
         return INSTANCE;
     }
-
     public PurchaseOrder execute(PurchaseOrder purchaseOrder) {
         var coin = coinIntegration.fetchCoinBy(purchaseOrder.coin());
         var newPurchaseOrder = new PurchaseOrder(
